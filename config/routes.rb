@@ -1,5 +1,10 @@
 SmsJournal::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :questions do
+      resources :responses
+    end
+  end
+
   resource  :verifications
 
   root to: 'users#new'

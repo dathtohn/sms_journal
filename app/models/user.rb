@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   VALID_PHONE_REGEX = /\d{3}[-]\d{3}[-]\d{4}\z/
   validates :phone, presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
 
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 end

@@ -18,12 +18,17 @@ Changelog
 
 2013-05-06
 
+Set-up
 - Set up heroku
-- Updated model associations
-- New user sign-up finished
-- Set up rspec
-	- New user sign-up (need to do verification tests)
-	- Started user pages
 - SSL in production = true
+M
+- Updated model associations
+V
+- Header and error messages partials
+C
+- New user sign-up finished
+Tests
+- New user sign-up (need to do verification tests)
+- Started user pages
 - Adjusted Bcrypt for faster rspec tests
 - FactoryGirl to help with user creation for tests

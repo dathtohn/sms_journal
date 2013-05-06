@@ -9,8 +9,9 @@ Changelog
 ===========
 
 2013-05-06
+---------
 
 - Updated model associations
 - Set up rspec
 	- New user registration
-- Set up Heroku
+- Set up heroku

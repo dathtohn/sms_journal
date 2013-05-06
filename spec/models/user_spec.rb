@@ -130,11 +130,11 @@ describe User do
 	end
 
 	# verification tests
-	describe "when verified is initially false" do
-		it "should be false" do
-			@user.verified.should == false
-		end
-	end
+	# describe "when verified is initially false" do
+	# 	it "should be false" do
+	# 		@user.verified.should == false
+	# 	end
+	# end
 
 	# authentication tests
 	describe "return value of authenticate method" do

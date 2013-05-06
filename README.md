@@ -14,4 +14,11 @@ Changelog
 - Updated model associations
 - New user sign-up finished
 - Set up rspec
-	- New user sign-up (need to do verification tests) 
+	- New user sign-up (need to do verification tests)
+	- Started user pages
+- SSL in production = true
+- Bcrypt
+	require 'bcrypt'
+  silence_warnings do
+    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+  end

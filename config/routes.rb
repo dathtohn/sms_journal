@@ -1,8 +1,10 @@
 SmsJournal::Application.routes.draw do
   resources :users do
-    resources :questions do
-      resources :responses
-    end
+    resources :responses
+  end
+
+  resources :questions do
+    resources :responses
   end
 
   resource  :verifications

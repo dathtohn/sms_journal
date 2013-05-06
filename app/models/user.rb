@@ -1,8 +1,26 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  phone      :string(255)
+#  verified   :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :phone, :verified
+  
   has_many :responses
 
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true, uniqueness: true
+  before_save { |user| user.email = email.downcase }
+
+  validates :name, 	presence: true, length: { maximum: 50 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  VALID_PHONE_REGEX = /\d{3}[-]\d{3}[-]\d{4}\z/
+  validates :phone, presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
 end

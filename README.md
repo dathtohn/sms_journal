@@ -11,6 +11,10 @@ To-Do List
 - Set up tunnlr or something that exposes localhost to server and allows for reception of SMS
 - Sessions controller and authentication
 - Verification of users' phones
+- Verification tests
+- Error messages tests
+- Questions and Responses MVC
+- Add admins
 - Make pretty
 
 Changelog 
@@ -18,12 +22,9 @@ Changelog
 
 2013-05-06
 
-Set-up
-- Set up heroku
-- SSL in production = true
-
 M
 - Updated model associations
+- Finished user model besides admins
 
 V
 - Header and error messages partials
@@ -32,7 +33,11 @@ C
 - New user sign-up finished
 
 Tests
-- New user sign-up (need to do verification tests)
+- New user sign-up
 - Started user pages
 - Adjusted Bcrypt for faster rspec tests
 - FactoryGirl to help with user creation for tests
+
+Other
+- Set up heroku
+- SSL in production = true

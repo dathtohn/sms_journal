@@ -27,17 +27,17 @@ M
 - Finished user model besides admins
 
 V
-- Header and error messages partials
+- Created header and error messages partials
 
 C
-- New user sign-up finished
+- Finished new user sign-up
 
 Tests
-- New user sign-up
+- Finished new user sign-up
 - Started user pages
 - Adjusted Bcrypt for faster rspec tests
-- FactoryGirl to help with user creation for tests
+- Installed FactoryGirl to help with user creation for tests
 
 Other
 - Set up heroku
-- SSL in production = true
+- Forced SSL in production = true

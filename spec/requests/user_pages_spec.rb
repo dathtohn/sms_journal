@@ -8,7 +8,7 @@ describe "User pages" do
   describe "signup page" do
     before { visit root_path }
 
-    it { should have_selector('h1',    text: 'Sign-Up') }
+    it { should have_selector('h1',    text: 'Sign-up') }
     # it { should have_selector('title', text: 'Sign-Up') }
 
     let(:submit) { "Create my account" }

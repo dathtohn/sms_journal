@@ -19,7 +19,7 @@ To-Do List
 Changelog 
 ---------
 
-####### 2013-05-07
+#### 2013-05-07
 
 M
 
@@ -32,7 +32,7 @@ C
 Tests
 - authentication_pages
 
-####### 2013-05-06
+#### 2013-05-06
 
 M
 - updated model associations

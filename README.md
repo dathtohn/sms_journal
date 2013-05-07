@@ -9,16 +9,25 @@ To-Do List
 ----------
 
 - Set up tunnlr or something that exposes localhost to server and allows for reception of SMS
-- Sessions controller and authentication
 - Verification of users' phones
-- Verification tests
 - Error messages tests
 - Questions and Responses MVC
 - Add admins
 - Make pretty
+	- title provide
 
 Changelog 
 ---------
+
+2013-05-07
+
+M
+
+V
+- Profile, settings, sign in, and sign out for users
+
+C
+- Sessions authentication, sign in, sign out, and remember_token
 
 2013-05-06
 
@@ -27,10 +36,22 @@ M
 - Finished user model besides admins
 
 V
+<<<<<<< HEAD
 - Created header and error messages partials
 
 C
 - Finished new user sign-up
+=======
+- Header and error messages partials
+- User show
+- Sign in (sessions#new)
+
+C
+- New user sign-up finished
+- Updated App to handle unverified requests to sign out
+- SessionsHelper
+	- sign_in
+>>>>>>> sessions
 
 Tests
 - Finished new user sign-up

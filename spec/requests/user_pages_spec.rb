@@ -4,9 +4,9 @@ describe "User pages" do
 
   subject { page }
 
-  # root/signup page tests
+  # signup page tests
   describe "signup page" do
-    before { visit root_path }
+    before { visit signup_path }
 
     it { should have_selector('h1',    text: 'Sign-up') }
     # it { should have_selector('title', text: 'Sign-Up') }
@@ -48,6 +48,7 @@ describe "User pages" do
 
         # it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Thank you') }
+        it { should have_link('Sign out') }
       end
     end
   end

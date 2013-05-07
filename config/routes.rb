@@ -8,8 +8,13 @@ SmsJournal::Application.routes.draw do
   end
 
   resource  :verifications
+  resource  :sessions
 
   root to: 'users#new'
+
+  match '/signup',    to: 'users#new'
+  match '/signin',    to: 'sessions#new'
+  match '/signout',   to: 'sessions#destroy', via: :delete
 
 
   # The priority is based upon order of creation:

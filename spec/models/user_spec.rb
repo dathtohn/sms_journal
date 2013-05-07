@@ -12,6 +12,7 @@ describe User do
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
+	it { should respond_to(:remember_token) }
 	it { should respond_to(:verified) }
 	it { should respond_to(:authenticate) }
 
@@ -130,11 +131,16 @@ describe User do
 	end
 
 	# verification tests
-	# describe "when verified is initially false" do
-	# 	it "should be false" do
-	# 		@user.verified.should == false
-	# 	end
-	# end
+	describe "when verified is not initially true" do
+		before { @user.save }
+		its(:verified) { should_not == true }
+	end
+
+	# remember token tests
+	describe "remember token should not be blank" do
+		before { @user.save }
+		its(:remember_token) { should_not be_blank }
+	end
 
 	# authentication tests
 	describe "return value of authenticate method" do

@@ -11,10 +11,11 @@ To-Do List
 - Set up tunnlr or something that exposes localhost to server and allows for reception of SMS
 - Verification of users' phones
 - Error messages tests
+- edit_user_path
+- users_path
 - Questions and Responses MVC
 - Add admins
 - Make pretty
-	- title provide
 
 Changelog 
 ---------
@@ -25,12 +26,16 @@ M
 
 V
 - profile, settings, sign in, and sign out for users
+- full_title application helper
+- edit_user_path
+- _fields for sign up and update
 
 C
 - sessions authentication, sign in, sign out, and remember_token
+- users#update
 
 Tests
-- authentication_pages
+- edit_user
 
 ### 2013-05-06
 

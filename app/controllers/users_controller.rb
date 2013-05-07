@@ -30,4 +30,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    oldphone = @user.phone
+    if @user.update_attributes(params[:user])
+      # successful update
+      flash[:success] = "Changes saved."
+    else
+      render 'edit'
+    end
+  end
 end

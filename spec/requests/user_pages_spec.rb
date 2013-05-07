@@ -8,8 +8,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign-up') }
-    # it { should have_selector('title', text: 'Sign-Up') }
+    it { should have_selector('h1',    text: 'Sign Up') }
+    it { should have_selector('title', text: 'Sign Up') }
 
     let(:submit) { "Create my account" }
 
@@ -21,7 +21,7 @@ describe "User pages" do
     	describe "after submission" do
         before { click_button submit }
 
-        # it { should have_selector('title', text: 'Sign-Up') }
+        it { should have_selector('title', text: 'Sign Up') }
         it { should have_content('error') }
 
         # error messages tests
@@ -46,7 +46,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by_email('user@example.com') }
 
-        # it { should have_selector('title', text: user.name) }
+        it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Thank you') }
         it { should have_link('Sign out') }
       end
@@ -58,6 +58,25 @@ describe "User pages" do
   	before { visit user_path(user) }
 
 		it { should have_selector('h1',    text: user.name) }
-		# it { should have_selector('title', text: user.name) }
+		it { should have_selector('title', text: user.name) }
 	end
+
+  # edit profile page tests
+  describe "edit/update" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit edit_user_path(user) }
+
+    describe "update page" do
+      it { should have_selector('h1',     text: "Update account information") }
+      it { should have_selector('title',  text: user.name) }
+      it { should have_button('Save changes') }
+    end
+
+    describe "with invalid information" do
+      before { click_button "Save changes" }
+
+      it { should have_content('error') }
+    end
+  end
+
 end

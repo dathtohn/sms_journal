@@ -20,6 +20,7 @@ Changelog
 ---------
 
 2013-05-07
+#######
 
 M
 
@@ -33,6 +34,7 @@ Tests
 - authentication_pages
 
 2013-05-06
+#######
 
 M
 - updated model associations

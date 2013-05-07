@@ -36,12 +36,10 @@ M
 - Finished user model besides admins
 
 V
-<<<<<<< HEAD
 - Created header and error messages partials
 
 C
 - Finished new user sign-up
-=======
 - Header and error messages partials
 - User show
 - Sign in (sessions#new)
@@ -51,7 +49,6 @@ C
 - Updated App to handle unverified requests to sign out
 - SessionsHelper
 	- sign_in
->>>>>>> sessions
 
 Tests
 - Finished new user sign-up

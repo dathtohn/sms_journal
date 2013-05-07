@@ -1,14 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-<<<<<<< HEAD
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Sign-up",    root_path %></li>
-          <li><%= link_to "Sign-in", '#' %></li>
-=======
-      <%= link_to "SMS Journal", root_path, id: "logo" %>
-      <nav>
+        <%= link_to "SMS Journal", root_path, id: "logo" %>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <% if signed_in? %>
@@ -18,7 +12,6 @@
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
->>>>>>> sessions
         </ul>
       </nav>
     </div>

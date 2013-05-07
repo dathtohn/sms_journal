@@ -47,12 +47,6 @@ C
 - user show
 - sign in (sessions#new)
 
-C
-- new user sign-up finished
-- updated App to handle unverified requests to sign out
-- sessionsHelper
-	- sign_in
-
 Tests
 - finished new user sign-up
 - started user pages

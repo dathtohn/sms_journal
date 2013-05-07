@@ -9,7 +9,6 @@ To-Do List
 ----------
 
 - Set up tunnlr or something that exposes localhost to server and allows for reception of SMS
-- Sessions controller and authentication
 - Verification of users' phones
 - Error messages tests
 - Questions and Responses MVC
@@ -22,6 +21,13 @@ Changelog
 
 2013-05-07
 
+M
+
+V
+- Profile, settings, sign in, and sign out for users
+
+C
+- Sessions authentication, sign in, sign out, and remember_token
 
 2013-05-06
 

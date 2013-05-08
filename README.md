@@ -9,13 +9,12 @@ To-Do List
 ----------
 
 - Set up tunnlr or something that exposes localhost to server and allows for reception of SMS
-- Verification of users' phones
-- Error messages tests
+- verification of users' phones and emails
+- tests (error messages, verifications)
 - edit_user_path
 - users_path
-- Questions and Responses MVC
-- Add admins
-- Make pretty
+- questions and responses MVC
+- admins
 
 Changelog 
 ---------
@@ -36,6 +35,8 @@ C
 
 Tests
 - edit_user
+- support/utilities.rb
+	- valid_signin method
 
 ### 2013-05-06
 

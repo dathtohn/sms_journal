@@ -7,10 +7,10 @@ SmsJournal::Application.routes.draw do
     resources :responses
   end
 
-  resource  :verifications
-  resource  :sessions
+  resources :verifications
+  resources :sessions, only: [:new, :create, :destroy]
 
-  root to: 'users#new'
+  root to: 'pages#home'
 
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new'

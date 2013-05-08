@@ -4,6 +4,10 @@ describe "User pages" do
 
   subject { page }
 
+  # index page
+  describe "index" do
+  end
+  
   # signup page tests
   describe "signup page" do
     before { visit signup_path }

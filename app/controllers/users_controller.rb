@@ -32,6 +32,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+    @users = User.all
+  end
+
   def edit
     # do not need because of the before_filter correct_user
     # @user = User.find(params[:id])

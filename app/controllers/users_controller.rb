@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user,  only: [:edit, :update]
+  before_filter :signed_in_user,  only: [:index, :edit, :update]
   before_filter :correct_user,    only: [:edit, :update]
+  before_filter :admin_user,      only: :destroy
 
 	def new
     @user = User.new
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      @user.toggle!(:admin) # remove later on 
       sign_in @user
       flash[:success] = "Thank you! You will receive an SMS shortly with verification instructions."
     
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
       #   to: @user.phone,
       #   body: "Thanks for signing up. To verify your account, please reply HELLO to this message."
       # )
-
+      
       redirect_to @user
     else
       render :new
@@ -30,6 +32,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def index
@@ -62,14 +65,16 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
+  def destroy
+    u = User.find(params[:id])
+    if current_user != u
+      u.destroy
+      flash[:success] = "User destroyed."
+      redirect_to users_url
     end
+  end
+
+  private
 
     def correct_user
       @user = User.find(params[:id])

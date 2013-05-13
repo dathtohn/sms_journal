@@ -1,3 +1,8 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
 <%= @user.email %>
+<% if @user.posts.any? %>
+  <h3>Posts (<%= @user.posts.count %>)</h3>
+    <%= render @posts %>
+  </ol>
+<% end %>

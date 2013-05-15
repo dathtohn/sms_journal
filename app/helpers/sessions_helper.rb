@@ -24,6 +24,11 @@ module SessionsHelper
     end
   end
 
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
+  end
+
   def admin_user
     redirect_to(root_path) unless current_user.admin?
   end
@@ -44,5 +49,9 @@ module SessionsHelper
 
   def store_location
     session[:return_to] = request.url
+  end
+
+  def answered?(user, topic)
+    !user.posts.find_by_topic_id(topic.id).content.nil? if user.posts.exists?(topic_id: topic.id)
   end
 end

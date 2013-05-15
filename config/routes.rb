@@ -1,6 +1,14 @@
 SmsJournal::Application.routes.draw do
-  resources :users, has_many: :posts, shallow: true
-  resources :topics, has_many: :posts, shallow: true
+  resources :users do
+    resources :posts
+  end
+
+  resources :topics do
+    resources :posts
+  end
+
+  resources :posts
+
   resources :verifications
   resources :sessions, only: [:new, :create, :destroy]
 

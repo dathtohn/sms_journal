@@ -3,6 +3,5 @@
 <%= @user.email %>
 <% if @user.posts.any? %>
   <h3>Posts (<%= @user.posts.count %>)</h3>
-    <%= render @posts %>
-  </ol>
+  <%= render @posts %>
 <% end %>

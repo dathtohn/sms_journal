@@ -18,11 +18,11 @@ class UsersController < ApplicationController
       client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
       
       # Create and send an SMS message
-      # client.account.sms.messages.create(
-      #   from: TWILIO_CONFIG['from'],
-      #   to: @user.phone,
-      #   body: "Thanks for signing up. To verify your account, please reply HELLO to this message."
-      # )
+      client.account.sms.messages.create(
+        from: TWILIO_CONFIG['from'],
+        to: @user.phone,
+        body: "Thanks for signing up! You will get texts that notify you when a new topic is up."
+      )
       
       redirect_to @user
     else

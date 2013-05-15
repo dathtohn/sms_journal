@@ -24,25 +24,6 @@ ActiveRecord::Schema.define(:version => 20130513181538) do
   add_index "posts", ["topic_id"], :name => "index_posts_on_topic_id"
   add_index "posts", ["user_id", "created_at"], :name => "index_posts_on_user_id_and_created_at"
 
-  create_table "questions", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "questions", ["user_id", "created_at"], :name => "index_questions_on_user_id_and_created_at"
-
-  create_table "responses", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "responses", ["user_id", "question_id"], :name => "index_responses_on_user_id_and_question_id"
-
   create_table "topics", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false

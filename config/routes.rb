@@ -8,8 +8,6 @@ SmsJournal::Application.routes.draw do
   end
 
   resources :posts
-
-  resources :verifications
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'pages#home'

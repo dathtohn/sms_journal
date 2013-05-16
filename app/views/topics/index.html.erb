@@ -1,0 +1,23 @@
+<% provide(:title, 'All Topics') %>
+<h1>All Topics</h1>
+
+<% if current_user.admin? %>
+	<%= link_to "Create new topic", new_topic_path %>
+<% end %>
+<ul class="users">
+  <% @topics.each do |topic| %>
+    <li>
+      <%= topic.created_at %>
+      | <%= topic.content %>
+      <% if answered?(current_user, topic) %>
+      	| <%= link_to "Update", edit_topic_post_path(topic, topic.posts.find_by_user_id(current_user)) %>
+      <% else %>
+      	| <%= link_to "Answer", new_topic_post_path(topic) %>
+      <% end %>
+      | <%= link_to "View responses", topic %>
+    	<% if current_user.admin? %>
+    		| <%= link_to "delete", topic, method: :delete, data: { confirm: "You sure?" } %>
+  		<% end %>
+  	</li>
+  <% end %>
+</ul>

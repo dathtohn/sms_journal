@@ -1,0 +1,12 @@
+<% provide(:title, 'New Post') %>
+<h1><%= @topic.content %></h1>
+
+<% @post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+ 
+<%= form_tag(topic_posts_path) do %>
+  <%= label_tag :content %><br>
+  <%= text_area_tag :content %>
+  <%= submit_tag "Create post" %>
+<% end %>

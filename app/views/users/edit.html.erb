@@ -1,0 +1,10 @@
+<% provide(:title, @user.name) %>
+<h1>Update account information</h1>
+<p>Note: If you update email or phone, you will need to verify it again.
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <%= render 'shared/error_messages' %>
+  <% end %>
+  <%= render 'fields', f: f %>
+  <%= f.submit "Save changes" %>
+<% end %>

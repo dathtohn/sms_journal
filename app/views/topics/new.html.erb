@@ -1,0 +1,11 @@
+<% provide(:title, "New Topic") %>
+<h1>New Topic</h1>
+
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <%= render 'shared/error_messages' %>
+  <% end %>
+  <%= f.label :content %><br>
+  <%= f.text_field :content %>
+  <%= f.submit "Create topic" %>
+<% end %>

@@ -1,0 +1,6 @@
+<% provide(:title, "Topic") %>
+<h1><%= @topic.content %></h1>
+<% if @topic.posts.any? %>
+  <h3>Posts (<%= @topic.posts.count %>)</h3>
+  <%= render @posts %>
+<% end %>

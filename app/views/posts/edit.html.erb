@@ -1,0 +1,12 @@
+<% provide(:title, 'Update Post') %>
+<h1><%= @topic.content %></h1>
+
+<% @post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+ 
+<%= form_tag(topic_post_path(@topic, @post), method: :put) do %>
+  <%= label_tag :content %><br>
+  <%= text_area_tag :content, @post.content %><br>
+  <%= submit_tag "Update post" %>
+<% end %>

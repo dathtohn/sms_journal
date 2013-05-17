@@ -10,7 +10,7 @@
 
 class Topic < ActiveRecord::Base
   attr_accessible :content
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   validates :content, presence: true
 

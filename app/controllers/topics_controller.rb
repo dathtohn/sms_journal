@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
         client.account.sms.messages.create(
           from: TWILIO_CONFIG['from'],
           to: user.phone,
-          body: @topic.content
+          body: @topic.content + " " + topics_url
         )
       end
 
